@@ -312,11 +312,12 @@
 					formObj[frm[i].attributes["name"].value]=frm[i].value;
 				}
 				 axios.post(' https://resume-swpril.herokuapp.com/create', formObj)
-            .then(() => axios.get(' https://resume-swpril.herokuapp.com/fetch', { responseType: 'blob' }))
-            .then((res) => {
+            	.then(() => axios.get(' https://resume-swpril.herokuapp.com/fetch', { responseType: 'blob' }))
+            	.then((res) => {
                 const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-                saveAs(pdfBlob, 'Resume.pdf');
+				saveAs(pdfBlob, 'Resume.pdf');
+				frm.submit();
             });
 
 			}
@@ -332,7 +333,9 @@
 						document.getElementById("prevBtn").style.display = "inline";
 					}
 					if (n == (x.length - 1)) {
-						document.getElementById("nextBtn").innerHTML = "Submit";
+						const btn=document.getElementById("nextBtn");
+						btn.innerHTML = "Download PDF";
+						
 					} else {
 						document.getElementById("nextBtn").innerHTML = "Next";
 					}
