@@ -77,19 +77,25 @@
 						name="exp1_org"
 						oninput="this.className = ''"
 					/>
+				</p>
+				<p>
 					<input
 						type="text"
 						placeholder="Position*"
 						name="exp1_pos"
 						oninput="this.className = ''"
 					/>
+				</p>
+				<p>
 					<input
 						type="text"
 						placeholder="Duration*"
 						name="exp1_dur"
 						oninput="this.className = ''"
 					/>
-					<input
+				</p>	
+				<p>
+						<input
 						type="text"
 						placeholder="Description*"
 						name="exp1_desc"
@@ -98,25 +104,32 @@
 				</p>
 			</br><b>2:</b></br>
 				<p>
+					
 					<input
 						type="text"
 						placeholder="Organisation*"
 						name="exp2_org"
 						oninput="this.className = ''"
 					/>
+				</p>
+				<p>
 					<input
 						type="text"
 						placeholder="Position*"
 						name="exp2_pos"
 						oninput="this.className = ''"
 					/>
+				</p>
+				<p>
 					<input
 						type="text"
 						placeholder="Duration*"
 						name="exp2_dur"
 						oninput="this.className = ''"
 					/>
-					<input
+				</p>	
+				<p>
+						<input
 						type="text"
 						placeholder="Description*"
 						name="exp2_desc"
@@ -315,9 +328,7 @@
             	.then(() => axios.get(' https://resume-swpril.herokuapp.com/fetch', { responseType: 'blob' }))
             	.then((res) => {
                 const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-
 				saveAs(pdfBlob, 'Resume.pdf');
-				frm.submit();
             });
 
 			}
